@@ -1,18 +1,11 @@
 import * as AWS from "aws-sdk";
+const AWSXRay = require('aws-xray-sdk')
 import { DocumentClient } from "aws-sdk/clients/dynamodb";
 import { Types } from 'aws-sdk/clients/s3';
 import { TodoItem } from "../models/TodoItem";
 import { TodoUpdate } from "../models/TodoUpdate";
-const AWSXRay = require('aws-xray-sdk')
-// import * as AWSXRay from 'aws-xray-sdk'
 
 const XAWS = AWSXRay.captureAWS(AWS)
-
-// const docClient = new XAWS.DynamoDB.DocumentClient()
-
-// Perform request and record a sub-segment
-//const item = docClient.get(...).promise()
-
 
 export class ToDoAccess {
     constructor(
